@@ -26,7 +26,7 @@ async def log_msg(msg):
 
 async def wait_and_ban(m: discord.Member):
     print(f"{m.display_name} has been detected playing league of legends")
-    log_msg(f'{m.display_name} has been detected playing league')
+    await log_msg(f'{m.display_name} has been detected playing league')
     await asyncio.sleep(1800) # 30 (m) x 60 (s) = 1800 nu basic matene vispar lol
     g: discord.Guild = m.guild
     m: discord.Member = g.get_member(m.id)
@@ -40,7 +40,7 @@ async def wait_and_ban(m: discord.Member):
         print(f"{m.display_name} has been banned from {g.name}")
         await m.send(f"You have been banned from {g.name} for playing too much League of Legends")
         await g.ban(m, reason="played league", delete_message_days=0)
-        log_msg(f'{m.display_name} has been banned from {g.name} for playing league')
+        await log_msg(f'{m.display_name} has been banned from {g.name} for playing league')
     else:
         print(f"{m.display_name} has closed the game timely")
 
@@ -48,7 +48,7 @@ async def wait_and_ban(m: discord.Member):
 @client.event
 async def on_ready():
     print(f'{client.user} - online')
-    log_msg(f'{client.user} is now online')
+    await log_msg(f'{client.user} is now online')
 
 
 @client.event
