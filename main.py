@@ -26,7 +26,6 @@ async def log_msg(msg):
 
 async def wait_and_ban(m: discord.Member):
     print(f"{m.display_name} has been detected playing league of legends")
-    await log_msg(f'{m.display_name} has been detected playing league')
     await asyncio.sleep(1800) # 30 (m) x 60 (s) = 1800 nu basic matene vispar lol
     g: discord.Guild = m.guild
     m: discord.Member = g.get_member(m.id)
