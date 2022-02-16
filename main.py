@@ -1,4 +1,3 @@
-from types import NoneType
 import discord, time, asyncio
 
 intents = discord.Intents.default()
@@ -11,7 +10,7 @@ client = discord.Client(intents=intents)
 
 start_time = time.time()
 
-
+NoneType = type(None)
                     
 
 # When the bot is ready
